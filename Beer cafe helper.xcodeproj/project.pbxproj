@@ -44,6 +44,7 @@
 		006C541329DB6DCB00E4BFF4 = {
 			isa = PBXGroup;
 			children = (
+				00B0DF7529E43B4B0063F64B /* Classes */,
 				006C541E29DB6DCB00E4BFF4 /* Beer cafe helper */,
 				006C541D29DB6DCB00E4BFF4 /* Products */,
 			);
@@ -62,15 +63,22 @@
 			children = (
 				006C541F29DB6DCB00E4BFF4 /* AppDelegate.swift */,
 				006C542129DB6DCB00E4BFF4 /* SceneDelegate.swift */,
-				006C542329DB6DCB00E4BFF4 /* ViewController.swift */,
 				006C542529DB6DCB00E4BFF4 /* Main.storyboard */,
 				006C542829DB6DCB00E4BFF4 /* Assets.xcassets */,
 				006C542A29DB6DCB00E4BFF4 /* LaunchScreen.storyboard */,
 				006C542D29DB6DCB00E4BFF4 /* Info.plist */,
-				006C543329DB7BB000E4BFF4 /* Extensions.swift */,
-				006C543529DB7DF500E4BFF4 /* SecondViewController.swift */,
 			);
 			path = "Beer cafe helper";
+			sourceTree = "<group>";
+		};
+		00B0DF7529E43B4B0063F64B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				006C542329DB6DCB00E4BFF4 /* ViewController.swift */,
+				006C543529DB7DF500E4BFF4 /* SecondViewController.swift */,
+				006C543329DB7BB000E4BFF4 /* Extensions.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
