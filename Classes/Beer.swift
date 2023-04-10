@@ -1,9 +1,9 @@
 import Foundation
 
 class Beer {
-    var name: String
+    let name: String
     var price: Float
-    var countPerDay: Int
+    let countPerDay: Int
     var countOfSelected: Int
     var countOfSelled: Int
     

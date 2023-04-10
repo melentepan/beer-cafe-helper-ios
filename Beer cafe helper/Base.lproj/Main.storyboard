@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="5ld-Zc-9BQ" userLabel="SecondView">
-                                <rect key="frame" x="0.0" y="-1" width="428" height="934"/>
+                                <rect key="frame" x="-1" y="-2" width="428" height="934"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t76-qg-IDj">
@@ -190,7 +190,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCE-oO-b3F">
-                                        <rect key="frame" x="295.33333333333331" y="257.66666666666669" width="71.333333333333314" height="71.333333333333314"/>
+                                        <rect key="frame" x="295.33333333333331" y="257.66666666666663" width="71.333333333333314" height="71.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xCE-oO-b3F" secondAttribute="height" id="UoE-qe-7ox"/>
                                         </constraints>
@@ -201,7 +201,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz0-1J-9pN">
-                                        <rect key="frame" x="61.333333333333336" y="257.66666666666669" width="71.333333333333314" height="71.333333333333314"/>
+                                        <rect key="frame" x="61.333333333333336" y="257.66666666666663" width="71.333333333333314" height="71.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Dz0-1J-9pN" secondAttribute="height" id="ZWk-rH-0si"/>
                                         </constraints>
@@ -252,7 +252,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" id="1gM-dq-j6Z" userLabel="FirstView">
-                                <rect key="frame" x="0.0" y="-3" width="428" height="935"/>
+                                <rect key="frame" x="-1" y="-4" width="428" height="936"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8N-9x-fK6">
@@ -394,7 +394,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhK-BI-Ara" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972.55813953488371" y="-108.15450643776825"/>
+            <point key="canvasLocation" x="1832" y="-108"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="nLP-L5-K7G">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" id="P7k-Ax-xAc" customClass="ThirdViewController" customModule="Beer_cafe_helper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="epw-g1-9cW">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD BEER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="kFR-IW-d8t">
+                                <rect key="frame" x="30" y="79" width="370" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1sW-zM-x5O"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kFR-IW-d8t" firstAttribute="leading" secondItem="1sW-zM-x5O" secondAttribute="leading" constant="30" id="Tae-eG-EWJ"/>
+                            <constraint firstItem="kFR-IW-d8t" firstAttribute="top" secondItem="1sW-zM-x5O" secondAttribute="top" constant="20" id="hQf-iF-gXH"/>
+                            <constraint firstAttribute="trailing" secondItem="kFR-IW-d8t" secondAttribute="trailing" constant="30" id="hcW-if-Ud5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAz-vm-4ec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-108"/>
         </scene>
     </scenes>
     <resources>

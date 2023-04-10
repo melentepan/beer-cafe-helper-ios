@@ -15,6 +15,7 @@
 		006C542C29DB6DCB00E4BFF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006C542A29DB6DCB00E4BFF4 /* LaunchScreen.storyboard */; };
 		006C543429DB7BB000E4BFF4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C543329DB7BB000E4BFF4 /* Extensions.swift */; };
 		006C543629DB7DF500E4BFF4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C543529DB7DF500E4BFF4 /* SecondViewController.swift */; };
+		0092765129E45D98008DDBD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092765029E45D98008DDBD4 /* ThirdViewController.swift */; };
 		00B0DF7729E43C540063F64B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B0DF7629E43C540063F64B /* Manager.swift */; };
 		00B0DF7929E43C6F0063F64B /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B0DF7829E43C6F0063F64B /* Beer.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		006C542D29DB6DCB00E4BFF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		006C543329DB7BB000E4BFF4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		006C543529DB7DF500E4BFF4 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0092765029E45D98008DDBD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		00B0DF7629E43C540063F64B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		00B0DF7829E43C6F0063F64B /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				006C543329DB7BB000E4BFF4 /* Extensions.swift */,
 				00B0DF7629E43C540063F64B /* Manager.swift */,
 				00B0DF7829E43C6F0063F64B /* Beer.swift */,
+				0092765029E45D98008DDBD4 /* ThirdViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				006C542229DB6DCB00E4BFF4 /* SceneDelegate.swift in Sources */,
 				006C543629DB7DF500E4BFF4 /* SecondViewController.swift in Sources */,
 				00B0DF7929E43C6F0063F64B /* Beer.swift in Sources */,
+				0092765129E45D98008DDBD4 /* ThirdViewController.swift in Sources */,
 				006C543429DB7BB000E4BFF4 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
