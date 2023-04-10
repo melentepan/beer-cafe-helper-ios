@@ -48,3 +48,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+/Beer cafe helper.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+/Beer cafe helper.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+/Beer cafe helper.xcodeproj/project.xcworkspace/xcuserdata/melentevstepan.xcuserdatad/UserInterfaceState.xcuserstate
+/Beer cafe helper.xcodeproj/xcuserdata/melentevstepan.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+/Beer cafe helper.xcodeproj/xcuserdata/melentevstepan.xcuserdatad/xcschemes/xcschememanagement.plist
