@@ -5,11 +5,11 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     
-    
     @IBOutlet weak var addInDayButtonFW: UIButton!
     @IBOutlet weak var addInDayButtonSW: UIButton!
-    @IBOutlet weak var clearButtonFW: UIButton!
-    @IBOutlet weak var clearButtonSW: UIButton!
+    
+    @IBOutlet weak var deleteButtonFW: UIButton!
+    @IBOutlet weak var deleteButtonSW: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +43,22 @@ class SecondViewController: UIViewController {
             self.secondView.frame.origin.x = 0
         }
         (firstView, secondView) = (secondView, firstView)
+    }
+    
+    @IBAction func backButtonFWPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    @IBAction func backButtonSWPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
+    
+    private func setUI() {
+        addInDayButtonFW.beautifullButton()
+        addInDayButtonSW.beautifullButton()
+        deleteButtonFW.beautifullButton()
+        deleteButtonSW.beautifullButton()
     }
 }

@@ -50,7 +50,6 @@
 		006C541329DB6DCB00E4BFF4 = {
 			isa = PBXGroup;
 			children = (
-				00B0DF7529E43B4B0063F64B /* Classes */,
 				006C541E29DB6DCB00E4BFF4 /* Beer cafe helper */,
 				006C541D29DB6DCB00E4BFF4 /* Products */,
 			);
@@ -67,6 +66,7 @@
 		006C541E29DB6DCB00E4BFF4 /* Beer cafe helper */ = {
 			isa = PBXGroup;
 			children = (
+				00B0DF7529E43B4B0063F64B /* Classes */,
 				006C541F29DB6DCB00E4BFF4 /* AppDelegate.swift */,
 				006C542129DB6DCB00E4BFF4 /* SceneDelegate.swift */,
 				006C542529DB6DCB00E4BFF4 /* Main.storyboard */,
