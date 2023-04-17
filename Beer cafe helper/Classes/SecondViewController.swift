@@ -3,18 +3,17 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var secondView: UIView!
+    
+    var secondView: UIView!
+    var secondViewLabel: UILabel!
     
     @IBOutlet weak var addInDayButtonFW: UIButton!
-    @IBOutlet weak var addInDayButtonSW: UIButton!
-    
     @IBOutlet weak var deleteButtonFW: UIButton!
-    @IBOutlet weak var deleteButtonSW: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        createViewRecognizers()
+        
     }
     
     func createViewRecognizers() {
@@ -53,12 +52,19 @@ class SecondViewController: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
-    
-    
     private func setUI() {
         addInDayButtonFW.beautifullButton()
-        addInDayButtonSW.beautifullButton()
         deleteButtonFW.beautifullButton()
-        deleteButtonSW.beautifullButton()
+        
+        createSecondView()
+        createViewRecognizers()
+    }
+    
+    private func createSecondView() {
+        secondView = firstView.copyView()!
+        view.addSubview(secondView)
+        view.sendSubviewToBack(secondView)
+        secondViewLabel = secondView.subviews[0] as? UILabel
+        secondViewLabel.text = "123"
     }
 }

@@ -19,3 +19,14 @@ extension UIButton {
         self.dropShadow()
     }
 }
+
+extension UIView {
+    func copyView<T: UIView>() -> T? {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: false)
+            return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? T
+        } catch {
+            return nil
+        }
+    }
+}
