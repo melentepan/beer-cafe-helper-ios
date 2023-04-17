@@ -13,7 +13,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
     }
     
     func createViewRecognizers() {
@@ -31,8 +30,10 @@ class SecondViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.firstView.frame.origin.x = -self.firstView.frame.width
             self.secondView.frame.origin.x = 0
+        } completion: { _ in
+            self.view.sendSubviewToBack(self.secondView)
+            self.firstView.frame.origin.x = 0
         }
-        (firstView, secondView) = (secondView, firstView)
     }
     
     @IBAction func rightSwipeDone() {
@@ -40,17 +41,24 @@ class SecondViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.firstView.frame.origin.x = self.firstView.frame.width
             self.secondView.frame.origin.x = 0
+        } completion: { _ in
+            self.view.sendSubviewToBack(self.secondView)
+            self.firstView.frame.origin.x = 0
         }
-        (firstView, secondView) = (secondView, firstView)
     }
     
     @IBAction func backButtonFWPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: false)
     }
     
-    @IBAction func backButtonSWPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: false)
+    @IBAction func plusButtonPressed(_ sender: UIButton) {
+        print("+")
     }
+    
+    @IBAction func minusButtonPressed(_ sender: UIButton) {
+        print("-")
+    }
+    
     
     private func setUI() {
         addInDayButtonFW.beautifullButton()
@@ -65,6 +73,6 @@ class SecondViewController: UIViewController {
         view.addSubview(secondView)
         view.sendSubviewToBack(secondView)
         secondViewLabel = secondView.subviews[0] as? UILabel
-        secondViewLabel.text = "123"
+//        secondViewLabel.text = "123"
     }
 }

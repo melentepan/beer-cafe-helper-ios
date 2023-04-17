@@ -203,6 +203,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="+">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="plusButtonPressed:" destination="blT-jn-YeY" eventType="touchUpInside" id="j1i-n6-b9A"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS5-Qf-XDw">
                                         <rect key="frame" x="63.000000000000007" y="258.33333333333337" width="72.666666666666686" height="73"/>
@@ -214,6 +217,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="-">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="minusButtonPressed:" destination="blT-jn-YeY" eventType="touchUpInside" id="U3L-3C-zVn"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-sZ-KeZ">
                                         <rect key="frame" x="184.66666666666666" y="545.66666666666663" width="67.666666666666657" height="48"/>
@@ -222,7 +228,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyB-4i-Y1q">
-                                        <rect key="frame" x="27" y="36" width="62" height="35"/>
+                                        <rect key="frame" x="20" y="59" width="62" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
