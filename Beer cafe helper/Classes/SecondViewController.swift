@@ -15,16 +15,6 @@ class SecondViewController: UIViewController {
         setUI()
     }
     
-    func createViewRecognizers() {
-        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeDone))
-        leftSwipeRecognizer.direction = .left
-        view.addGestureRecognizer(leftSwipeRecognizer)
-        
-        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDone))
-        rightSwipeRecognizer.direction = .right
-        view.addGestureRecognizer(rightSwipeRecognizer)
-    }
-    
     @IBAction func leftSwipeDone() {
         secondView.frame.origin.x = view.frame.width
         UIView.animate(withDuration: 0.3) {
@@ -48,7 +38,7 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func backButtonFWPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
@@ -74,5 +64,15 @@ class SecondViewController: UIViewController {
         view.sendSubviewToBack(secondView)
         secondViewLabel = secondView.subviews[0] as? UILabel
 //        secondViewLabel.text = "123"
+    }
+    
+    private func createViewRecognizers() {
+        let leftSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(leftSwipeDone))
+        leftSwipeRecognizer.direction = .left
+        view.addGestureRecognizer(leftSwipeRecognizer)
+        
+        let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDone))
+        rightSwipeRecognizer.direction = .right
+        view.addGestureRecognizer(rightSwipeRecognizer)
     }
 }
