@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         startDayButton.beautifullButton()
         endDayButton.beautifullButton()
         addBeerButton.beautifullButton()
-        setPricesButton.beautifullButton()
     }
 }
 

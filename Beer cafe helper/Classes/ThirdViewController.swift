@@ -9,6 +9,11 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var AddBeerClassButton: UIButton!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AddBeerClassButton.beautifullButton()
+    }
+    
     @IBAction func AddBeerClassButtonPressed(_ sender: UIButton) {
         guard let name = beerNameTextField.text else {return showFailAC()}
         guard let count = Int(countPerDayTextField.text!) else {return showFailAC()}

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q4u-BM-cTU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q4u-BM-cTU">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -65,18 +66,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap0-qd-P4k">
-                                <rect key="frame" x="75" y="662" width="280" height="93.333333333333371"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Set prices">
-                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="setPricesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gez-rU-HZJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6C-L1-2c2">
                                 <rect key="frame" x="75" y="518.66666666666663" width="280" height="93.333333333333371"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +82,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ap0-qd-P4k" firstAttribute="height" secondItem="X6C-L1-2c2" secondAttribute="height" id="1sx-2t-FFG"/>
                             <constraint firstItem="aqf-H5-TSF" firstAttribute="width" secondItem="Hry-fp-f78" secondAttribute="width" id="7M5-su-AQY"/>
                             <constraint firstItem="X6C-L1-2c2" firstAttribute="width" secondItem="aqf-H5-TSF" secondAttribute="width" id="B5j-dm-1UX"/>
                             <constraint firstItem="X6C-L1-2c2" firstAttribute="centerX" secondItem="aqf-H5-TSF" secondAttribute="centerX" id="CZR-F6-bXL"/>
@@ -103,11 +91,8 @@
                             <constraint firstItem="Vlu-Eh-MEC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="PIs-KB-vEg"/>
                             <constraint firstItem="Vlu-Eh-MEC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="V4y-Ow-t32"/>
                             <constraint firstItem="Hry-fp-f78" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="ZCy-fg-rje"/>
-                            <constraint firstItem="ap0-qd-P4k" firstAttribute="width" secondItem="X6C-L1-2c2" secondAttribute="width" id="aBr-MI-X5J"/>
                             <constraint firstItem="X6C-L1-2c2" firstAttribute="top" secondItem="aqf-H5-TSF" secondAttribute="bottom" constant="50" id="g5r-pB-hdW"/>
                             <constraint firstItem="Hry-fp-f78" firstAttribute="top" secondItem="Vlu-Eh-MEC" secondAttribute="bottom" constant="100" id="nPC-cL-EEZ"/>
-                            <constraint firstItem="ap0-qd-P4k" firstAttribute="centerX" secondItem="X6C-L1-2c2" secondAttribute="centerX" id="o4l-L4-fyO"/>
-                            <constraint firstItem="ap0-qd-P4k" firstAttribute="top" secondItem="X6C-L1-2c2" secondAttribute="bottom" constant="50" id="pRj-Az-Oow"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vlu-Eh-MEC" secondAttribute="trailing" constant="30" id="tgy-QT-5yY"/>
                             <constraint firstItem="aqf-H5-TSF" firstAttribute="top" secondItem="Hry-fp-f78" secondAttribute="bottom" constant="50" id="tic-AA-ShS"/>
                             <constraint firstItem="aqf-H5-TSF" firstAttribute="height" secondItem="Hry-fp-f78" secondAttribute="height" id="uXy-on-hQK"/>
@@ -117,7 +102,6 @@
                     <connections>
                         <outlet property="addBeerButton" destination="X6C-L1-2c2" id="2br-qk-H7a"/>
                         <outlet property="endDayButton" destination="aqf-H5-TSF" id="B0t-1I-1aD"/>
-                        <outlet property="setPricesButton" destination="ap0-qd-P4k" id="3h4-bR-xhU"/>
                         <outlet property="startDayButton" destination="Hry-fp-f78" id="aok-n0-iVf"/>
                     </connections>
                 </viewController>
