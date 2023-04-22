@@ -14,22 +14,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startDayButtonPressed(_ sender: UIButton) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {return}
-        self.navigationController?.pushViewController(controller, animated: true)
+        if Manager.shared.beerArray.isEmpty {
+            pushToViewController(withIdentifier: "ThirdViewController")
+        } else {
+            pushToViewController(withIdentifier: "SecondViewController")
+        }
     }
     
     @IBAction func endDayButtonPressed(_ sender: UIButton) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {return}
-        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
 
     @IBAction func addBeerButtonPressed(_ sender: UIButton) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "ThirdViewController") as? ThirdViewController else {return}
-        self.navigationController?.pushViewController(controller, animated: true)
+        pushToViewController(withIdentifier: "ThirdViewController")
     }
 
     @IBAction func setPricesButtonPressed(_ sender: UIButton) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {return}
+        pushToViewController(withIdentifier: "SecondViewController")
+    }
+    
+    private func pushToViewController(withIdentifier identifier: String) {
+        guard let controller = storyboard?.instantiateViewController(withIdentifier: identifier) else { return }
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
