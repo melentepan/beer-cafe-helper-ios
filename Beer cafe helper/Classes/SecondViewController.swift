@@ -25,7 +25,6 @@ class SecondViewController: UIViewController {
     
     @IBAction func leftSwipeDone() {
         guard Manager.shared.beerArray.count > 1 else {return}
-        Manager.shared.currentBeerIndex += 1
         secondView.frame.origin.x = view.frame.width
         UIView.animate(withDuration: 0.3) {
             self.firstView.frame.origin.x = -self.firstView.frame.width
@@ -34,13 +33,12 @@ class SecondViewController: UIViewController {
             self.view.sendSubviewToBack(self.secondView)
             self.firstView.frame.origin.x = 0
         }
-        Manager.shared.currentBeerIndex = beerIndex()
+        Manager.shared.currentBeerIndex = beerIndex(+1)
         setCurrentBeer()
     }
     
     @IBAction func rightSwipeDone() {
         guard Manager.shared.beerArray.count > 1 else {return}
-        Manager.shared.currentBeerIndex -= 1
         secondView.frame.origin.x = -view.frame.width
         UIView.animate(withDuration: 0.3) {
             self.firstView.frame.origin.x = self.firstView.frame.width
@@ -49,7 +47,7 @@ class SecondViewController: UIViewController {
             self.view.sendSubviewToBack(self.secondView)
             self.firstView.frame.origin.x = 0
         }
-        Manager.shared.currentBeerIndex = beerIndex()
+        Manager.shared.currentBeerIndex = beerIndex(-1)
         setCurrentBeer()
     }
     

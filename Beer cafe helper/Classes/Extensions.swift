@@ -50,7 +50,8 @@ extension ThirdViewController {
 }
 
 extension SecondViewController {
-    func beerIndex() -> Int {
+    func beerIndex(_ shift:Int) -> Int {
+        Manager.shared.currentBeerIndex += shift
         if abs(Manager.shared.currentBeerIndex) == Manager.shared.beerArray.count {
             Manager.shared.currentBeerIndex = 0
         } else if Manager.shared.currentBeerIndex < 0 {
