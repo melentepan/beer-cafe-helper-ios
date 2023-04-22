@@ -10,15 +10,17 @@ class ThirdViewController: UIViewController {
     
     
     @IBAction func AddBeerClassButtonPressed(_ sender: UIButton) {
-        guard let name = beerNameTextField.text else {return}
-        guard let count = Int(countPerDayTextField.text!) else {return}
-        guard let price = Float(PriceTextField.text!) else {return}
+        guard let name = beerNameTextField.text else {return showFailAC()}
+        guard let count = Int(countPerDayTextField.text!) else {return showFailAC()}
+        guard let price = Float(PriceTextField.text!) else {return showFailAC()}
+        showSuccessfullAC(beerName: name)
         Manager.shared.beerArray.append(Beer(name: name, price: price, countPerDay: count))
+        beerNameTextField.text = ""
+        countPerDayTextField.text = ""
+        PriceTextField.text = ""
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
