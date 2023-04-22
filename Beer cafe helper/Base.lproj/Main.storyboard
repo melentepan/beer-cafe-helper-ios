@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="1gM-dq-j6Z" userLabel="FirstView">
-                                <rect key="frame" x="-5" y="-4" width="436" height="934"/>
+                                <rect key="frame" x="-5" y="-5" width="436" height="935"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8N-9x-fK6">
@@ -151,6 +151,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="140"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-w5-Fdk">
+                                        <rect key="frame" x="184.33333333333334" y="432.33333333333331" width="67.666666666666657" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-sZ-KeZ">
+                                        <rect key="frame" x="184.33333333333334" y="545.33333333333337" width="67.666666666666657" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count of selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7S-AI-JKO">
                                         <rect key="frame" x="10" y="169" width="416" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -160,12 +172,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count of remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-MH-vZq">
                                         <rect key="frame" x="115.66666666666669" y="392.33333333333331" width="205" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-w5-Fdk">
-                                        <rect key="frame" x="184.33333333333334" y="432.33333333333331" width="67.666666666666657" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -221,12 +227,6 @@
                                             <action selector="minusButtonPressed:" destination="blT-jn-YeY" eventType="touchUpInside" id="U3L-3C-zVn"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-sZ-KeZ">
-                                        <rect key="frame" x="184.33333333333334" y="545.33333333333337" width="67.666666666666657" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyB-4i-Y1q">
                                         <rect key="frame" x="20" y="59" width="62" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -278,6 +278,10 @@
                         <outlet property="addInDayButtonFW" destination="I9g-RT-Bp9" id="Y8z-Ki-0nb"/>
                         <outlet property="deleteButtonFW" destination="KR2-dM-AV2" id="2ry-PO-u4S"/>
                         <outlet property="firstView" destination="1gM-dq-j6Z" id="5yK-Wk-xky"/>
+                        <outlet property="firstViewCountOfRemLabel" destination="3jT-w5-Fdk" id="fRb-Lg-l8Q"/>
+                        <outlet property="firstViewCountOfSelectedTF" destination="Oqq-8b-Zjz" id="Myj-ke-jlC"/>
+                        <outlet property="firstViewCurentPriceLabel" destination="HNF-sZ-KeZ" id="OOX-dJ-Tfa"/>
+                        <outlet property="firstViewNameLabel" destination="I8N-9x-fK6" id="nVo-ua-ea1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhK-BI-Ara" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

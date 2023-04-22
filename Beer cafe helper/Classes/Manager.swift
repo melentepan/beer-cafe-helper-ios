@@ -1,5 +1,4 @@
 import Foundation
-import UIKit
 
 class Manager {
     static let shared = Manager()
@@ -8,8 +7,6 @@ class Manager {
     
     private init() {}
     
-    func backButtonPressed(_ sender: ViewController) {
-        sender.dismiss(animated: true)
-    }
+    var currentBeerIndex = 0
     
 }
