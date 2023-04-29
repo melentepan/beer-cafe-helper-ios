@@ -11,6 +11,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         startDayButton.beautifullButton()
+        Manager.shared.loadBeerArray()
     }
     
     @IBAction func startDayButtonPressed(_ sender: UIButton) {
@@ -22,7 +23,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func endDayButtonPressed(_ sender: UIButton) {
-        
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
     }
 
     @IBAction func addBeerButtonPressed(_ sender: UIButton) {

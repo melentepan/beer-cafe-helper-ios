@@ -80,12 +80,12 @@
 		00B0DF7529E43B4B0063F64B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				006C543329DB7BB000E4BFF4 /* Extensions.swift */,
 				006C542329DB6DCB00E4BFF4 /* ViewController.swift */,
 				006C543529DB7DF500E4BFF4 /* SecondViewController.swift */,
-				006C543329DB7BB000E4BFF4 /* Extensions.swift */,
+				0092765029E45D98008DDBD4 /* ThirdViewController.swift */,
 				00B0DF7629E43C540063F64B /* Manager.swift */,
 				00B0DF7829E43C6F0063F64B /* Beer.swift */,
-				0092765029E45D98008DDBD4 /* ThirdViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

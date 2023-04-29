@@ -19,7 +19,7 @@ class ThirdViewController: UIViewController {
         guard let count = Int(countPerDayTextField.text!) else {return showFailAC()}
         guard let price = Float(PriceTextField.text!) else {return showFailAC()}
         showSuccessfullAC(beerName: name)
-        Manager.shared.beerArray.append(Beer(name: name, price: price, countPerDay: count))
+        Manager.shared.saveBeer(Beer(name: name, price: price, countPerDay: count))
         beerNameTextField.text = ""
         countPerDayTextField.text = ""
         PriceTextField.text = ""
