@@ -32,16 +32,5 @@ class ViewController: UIViewController {
     @IBAction func setPricesButtonPressed(_ sender: UIButton) {
         pushToViewController(withIdentifier: "SecondViewController")
     }
-    
-    private func pushToViewController(withIdentifier identifier: String) {
-        guard let controller = storyboard?.instantiateViewController(withIdentifier: identifier) else { return }
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    private func setUI() {
-        startDayButton.beautifullButton()
-        endDayButton.beautifullButton()
-        addBeerButton.beautifullButton()
-    }
 }
 
