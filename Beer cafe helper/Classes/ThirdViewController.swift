@@ -19,13 +19,14 @@ class ThirdViewController: UIViewController {
         guard let count = Int(countPerDayTextField.text!) else {return showFailAC()}
         guard let price = Float(PriceTextField.text!) else {return showFailAC()}
         showSuccessfullAC(beerName: name)
-        Manager.shared.saveBeer(Beer(name: name, price: price, countPerDay: count))
+        Manager.shared.beerArray.append(Beer(name: name, price: price, countPerDay: count))
+        Manager.shared.saveBeer()
         beerNameTextField.text = ""
         countPerDayTextField.text = ""
         PriceTextField.text = ""
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        returnBack()
     }
 }

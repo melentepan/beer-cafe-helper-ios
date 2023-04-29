@@ -37,7 +37,7 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func backButtonFWPressed(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        returnBack()
     }
     
     @IBAction func plusButtonPressed(_ sender: UIButton) {
@@ -47,5 +47,17 @@ class SecondViewController: UIViewController {
     
     @IBAction func minusButtonPressed(_ sender: UIButton) {
         changeCountOfSelected(-1)
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        if Manager.shared.beerArray.count - 1 == 0 {
+            Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex)
+            pushToViewController(withIdentifier: "ThirdViewController")
+        } else {
+            showSuccessfullDeleteAC(beerName: Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex).name)
+            updateCurrentBeer(with: -1)
+            setCurrentBeer()
+        }
+        Manager.shared.saveBeer()
     }
 }

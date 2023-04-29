@@ -31,12 +31,18 @@ extension UIView {
     }
 }
 
-extension ViewController {
+extension UIViewController {
     func pushToViewController(withIdentifier identifier: String) {
         guard let controller = storyboard?.instantiateViewController(withIdentifier: identifier) else { return }
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func returnBack() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension ViewController {
     func setUI() {
         startDayButton.beautifullButton()
         endDayButton.beautifullButton()
@@ -124,6 +130,13 @@ extension SecondViewController {
         let rightSwipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeDone))
         rightSwipeRecognizer.direction = .right
         view.addGestureRecognizer(rightSwipeRecognizer)
+    }
+    
+    func showSuccessfullDeleteAC(beerName : String){
+        let alert = UIAlertController(title: "Successful", message: "\"\(beerName)\" deleted successfully", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
