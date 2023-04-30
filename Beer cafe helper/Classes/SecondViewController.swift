@@ -49,15 +49,11 @@ class SecondViewController: UIViewController {
         changeCountOfSelected(-1)
     }
     
+    @IBAction func AddInDayButtonPressed(_ sender: UIButton) {
+        addInTotal()
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        if Manager.shared.beerArray.count - 1 == 0 {
-            Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex)
-            pushToViewController(withIdentifier: "ThirdViewController")
-        } else {
-            showSuccessfullDeleteAC(beerName: Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex).name)
-            updateCurrentBeer(with: -1)
-            setCurrentBeer()
-        }
-        Manager.shared.saveBeer()
+        deleteBeer()
     }
 }

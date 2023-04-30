@@ -2,21 +2,23 @@ import Foundation
 
 class Beer: Codable {
     let name: String
-    var price: Float
+    let price: Float
     let countPerDay: Int
     var countOfSelected: Int
+    var countOfRemaining: Int
     var countOfSelled: Int
     
     init(name: String, price: Float, countPerDay: Int) {
         self.name = name
         self.price = price
         self.countPerDay = countPerDay
+        self.countOfRemaining = countPerDay
         self.countOfSelected = 0
         self.countOfSelled = 0
     }
     
     public enum CodingKeys: String, CodingKey {
-        case name, price, countPerDay, countOfSelected, countOfSelled
+        case name, price, countPerDay, countOfSelected, countOfRemaining, countOfSelled
     }
     
     required public init(from decoder: Decoder) throws {
@@ -26,6 +28,7 @@ class Beer: Codable {
         self.price = try container.decode(Float.self, forKey: .price)
         self.countPerDay = try container.decode(Int.self, forKey: .countPerDay)
         self.countOfSelected = try container.decode(Int.self, forKey: .countOfSelected)
+        self.countOfRemaining = try container.decode(Int.self, forKey: .countOfRemaining)
         self.countOfSelled = try container.decode(Int.self, forKey: .countOfSelled)
     }
     
@@ -36,6 +39,7 @@ class Beer: Codable {
         try container.encode(self.price, forKey: .price)
         try container.encode(self.countPerDay, forKey: .countPerDay)
         try container.encode(self.countOfSelected, forKey: .countOfSelected)
+        try container.encode(self.countOfRemaining, forKey: .countOfRemaining)
         try container.encode(self.countOfSelled, forKey: .countOfSelled)
     }
 }

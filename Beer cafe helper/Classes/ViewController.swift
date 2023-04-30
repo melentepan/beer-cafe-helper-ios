@@ -23,11 +23,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func endDayButtonPressed(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
-        }
+        showTotalAC()
     }
 
     @IBAction func addBeerButtonPressed(_ sender: UIButton) {

@@ -40,6 +40,13 @@ extension UIViewController {
     func returnBack() {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
 extension ViewController {
@@ -47,6 +54,20 @@ extension ViewController {
         startDayButton.beautifullButton()
         endDayButton.beautifullButton()
         addBeerButton.beautifullButton()
+    }
+    
+    func showTotalAC(){
+        let soldBeers = Manager.shared.beerArray.filter { $0.countOfSelled != 0 }
+        var result = soldBeers.map { "\"\($0.name)\":\n\($0.price)$ * \($0.countOfSelled) = \($0.price * Float($0.countOfSelled))$" }.joined(separator: "\n")
+        if result.isEmpty {
+            result = "No purchases"
+        }
+        for beer in soldBeers {
+            beer.countOfRemaining = beer.countPerDay
+            beer.countOfSelled = 0
+            beer.countOfSelected = 0
+        }
+        showAlert(title: "Total", message: result)
     }
 }
 
@@ -62,7 +83,10 @@ extension SecondViewController {
     }
     
     func changeCountOfSelected(_ shift: Int) {
-        Manager.shared.beerArray[Manager.shared.currentBeerIndex].countOfSelected += shift
+        let currentBeer = Manager.shared.beerArray[Manager.shared.currentBeerIndex]
+        guard currentBeer.countOfSelected + shift >= 0 else {return}
+        guard currentBeer.countOfSelected + shift <= currentBeer.countOfRemaining else {return}
+        currentBeer.countOfSelected += shift
         setCurrentBeer()
     }
     
@@ -132,27 +156,43 @@ extension SecondViewController {
         view.addGestureRecognizer(rightSwipeRecognizer)
     }
     
-    func showSuccessfullDeleteAC(beerName : String){
-        let alert = UIAlertController(title: "Successful", message: "\"\(beerName)\" deleted successfully", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    func deleteBeer() {
+        if Manager.shared.beerArray.count - 1 == 0 {
+            Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex)
+            pushToViewController(withIdentifier: "ThirdViewController")
+        } else {
+            showAlert(title: "Successful", message: "\"\(Manager.shared.beerArray.remove(at: Manager.shared.currentBeerIndex).name)\" deleted successfully")
+            updateCurrentBeer(with: -1)
+            setCurrentBeer()
+        }
+        Manager.shared.saveBeer()
+    }
+    
+    func addInTotal() {
+        let currentBeer = Manager.shared.beerArray[Manager.shared.currentBeerIndex]
+        guard currentBeer.countOfRemaining - currentBeer.countOfSelected >= 0 else {return}
+        currentBeer.countOfSelled += currentBeer.countOfSelected
+        currentBeer.countOfRemaining -= currentBeer.countOfSelected
+        currentBeer.countOfSelected = 0
+        setCurrentBeer()
     }
 }
 
 extension ThirdViewController {
-    func showSuccessfullAC(beerName : String){
-        let alert = UIAlertController(title: "Successful", message: "\"\(beerName)\" added successfully", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    func showFailAC(){
+        showAlert(title: "Unsuccessful", message: "Invalid count per day or price")
     }
     
-    func showFailAC(){
-        let alert = UIAlertController(title: "Unsuccessful", message: "Invalid count per day or price", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    func addBeer() {
+        guard let name = beerNameTextField.text else {return showFailAC()}
+        guard let count = Int(countPerDayTextField.text!) else {return showFailAC()}
+        guard let price = Float(PriceTextField.text!) else {return showFailAC()}
+        showAlert(title: "Successful", message: "\"\(name)\" added successfully")
+        Manager.shared.beerArray.append(Beer(name: name, price: price, countPerDay: count))
+        Manager.shared.saveBeer()
+        beerNameTextField.text = ""
+        countPerDayTextField.text = ""
+        PriceTextField.text = ""
     }
 }
 
